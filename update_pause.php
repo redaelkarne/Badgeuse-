@@ -3,10 +3,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 date_default_timezone_set('Europe/Paris');
 // Retrieving database connection parameters
-$servername = "192.168.0.12:3366";
-$username = "astus";
-$password = "123456";
-$dbname = "dick";
+
 
 // Creating a new database connection
 $conn = new mysqli($servername, $username, $password, $dbname);
