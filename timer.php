@@ -1,10 +1,7 @@
 <?php
 session_start();
 
-$servername = "192.168.0.12:3366";
-$username = "astus";
-$password = "123456";
-$dbname = "dick";
+
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
