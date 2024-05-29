@@ -5,12 +5,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $durepause = $_POST['durepause'];
     date_default_timezone_set('Europe/Paris');
     // Your email address
-    $to = "y.atfi@astus.fr";
+    $to = "test";
     $subject = "Alerte Pause : $agent";
     $message = "$agent a depasseé le temps de sa pause.\r\n";
     $message .= "Duree autorisée: $durepause.";
     $message .= "Pause prise: $duree minutes.\r\n";
-    $headers = "From: astus@astus.fr\r\n";
+    $headers = "From: test\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     
