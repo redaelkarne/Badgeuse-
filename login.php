@@ -1,8 +1,5 @@
 <?php
-    $servername = "192.168.0.12:3366";
-    $username = "astus";
-    $password = "123456";
-    $dbname = "dick";
+ 
     date_default_timezone_set('Europe/Paris');
     $conn = new mysqli($servername, $username, $password, $dbname);
 
