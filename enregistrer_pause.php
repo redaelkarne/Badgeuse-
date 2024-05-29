@@ -9,10 +9,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $motif = $_POST["motif"];
     
     // Connexion � la base de donn�es (� remplacer par vos informations de connexion)
-    $servername = "192.168.0.12:3366";
-    $username = "astus";
-    $password = "123456";
-    $dbname = "dick";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
 
