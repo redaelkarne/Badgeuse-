@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d9d9f2;
+    color: #333;
+}
+
+h1 {
+    color: #6a0dad; /* Violet */
+    text-align: center;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #6a0dad; /* Violet */
+}
+
+input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #6a0dad; /* Violet */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #4e086d; /* Darker Violet */
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.button-container button {
+    width: calc(20% - 10px);
+    padding: 10px;
+    margin: 5px;
+    background-color: #ccc;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-container button:hover {
+    background-color: #999;
+}
+
+.numeric-keyboard {
+    margin: 0 auto; /* Centre horizontalement */
+    width: fit-content; /* Ajuster la largeur au contenu */
+}
+
+.numeric-keyboard button {
+    width: 60px; /* Largeur des touches */
+    height: 60px; /* Hauteur des touches */
+    font-size: 16px;
+    margin: 5px;
+    border-radius: 10px; /* Rendre les touches plus arrondies */
+}
+.button-72 {
+    background-color: #b27fe6; /* Violet pastel */
+    border: none;
+    border-radius: 30px; /* Tr�s arrondi */
+    color: #fff;
+    font-size: 20px;
+    padding: 15px 25px; /* Espacement */
+    margin: 0px; /* Espacement entre les boutons */
+    cursor: pointer;
+  }
+  
+  .button-72:hover {
+    background-color: #d8b8f3;
+  }
+  
+  
+  /* Ajouter ces styles CSS dans votre fichier styles.css */
+
+.minuteur {
+    font-size: 36px; /* Taille de police plus grande */
+    font-weight: bold; /* Texte en gras */
+    text-align: center; /* Centrer le texte */
+    margin-top: 50px; /* Espacement par rapport au haut de la page */
+}
+
+#countdown {
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    font-size: 36px; /* Taille de police plus grande */
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

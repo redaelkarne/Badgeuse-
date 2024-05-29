@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scanner QR Code</title>
+    <script src="qrcode.js"></script>
+</head>
+<body>
+    <h1>Scanner QR Code</h1>
+    <div id="qrCode"></div>
+
+    <script>
+
+                // Fonction pour générer un identifiant unique
+                function generateUniqueID() {
+            // Générer un timestamp unique en millisecondes
+            var timestamp = new Date().getTime();
+            // Générer un identifiant aléatoire
+            var randomID = Math.floor(Math.random() * 100000);
+            // Concaténer le timestamp et l'identifiant aléatoire pour former l'identifiant unique
+            return timestamp + "_" + randomID;
+        }
+
+        // Fonction pour générer le QR code avec un contenu unique
+        function generateQRCode() {
+            var uniqueID = generateUniqueID();
+            var qrData = "https://webclient.astus.fr/badg/qr_process.php?id=" + uniqueID; // Lien vers qr_process.php avec l'identifiant unique
+            var qrCodeDiv = document.getElementById("qrCode");
+            qrCodeDiv.innerHTML = ""; // Effacer le contenu précédent (le cas échéant)
+            var qr = new QRCode(qrCodeDiv, {
+                text: qrData,
+                width: 250,
+                height: 250
+            });
+        }
+        setInterval(generateQRCode, 5000);
+        // Générer le QR code initial
+        generateQRCode();
+
+
+
+        // Fonction pour envoyer les données du QR code au serveur PHP
+        function sendQRData(scannedText) {
+            fetch('qr_process.php', {
+                method: 'POST',
+                body: JSON.stringify({ qrData: scannedText }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    console.log('Données envoyées avec succès.');
+                } else {
+                    console.error('Échec de l\'envoi des données.');
+                }
+            }).catch(error => {
+                console.error('Erreur:', error);
+            });
+        }
+
+        // Fonction pour scanner le QR code
+        function scanQRCode() {
+            const html5QrCode = new Html5Qrcode("qrCode");
+            html5QrCode.start(
+                {
+                    fps: 10,
+                    qrbox: 250
+                },
+                {
+                    resultFunction: sendQRData,
+                },
+                (err) => console.log(err)
+            );
+        }
+
+        // Démarrer le scanner QR code
+        scanQRCode();
+
+
+    </script>
+</body>
+</html>

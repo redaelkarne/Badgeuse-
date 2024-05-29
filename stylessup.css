@@ -1,0 +1,82 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+    background-color: #f1d3b783;
+}
+
+h1 {
+    text-align: center;
+    color: #000000;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #a54b8a;
+    color: white;
+    text-align: center;
+    
+}
+
+thead tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    
+}
+
+tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    transition: background-color 0.3s;
+    text-align: center;
+    
+}
+
+thead th, tbody td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+tbody td {
+    color: #555;
+}
+
+tbody td:last-child {
+    text-align: center;
+    font-weight: bold;
+}
+
+@keyframes flashRed {
+    0% {
+        background-color: white;
+    }
+    50% {
+        background-color: red;
+    }
+    100% {
+        background-color: white;
+    }
+}
+
+#breaks-table tbody tr.late td {
+    animation: flashRed 1s infinite;
+}
+
